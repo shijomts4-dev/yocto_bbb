@@ -32,7 +32,7 @@
         },
         "yocto_bbb": {
             "git-remote": {
-                "uri": "git@github.com:shijomts4-dev/yocto_bbb.git",
+                "uri": "ssh://git@github.com/shijomts4-dev/yocto_bbb.git",
                 "branch": "main",
                 "rev": "main"
             }
