@@ -1,0 +1,62 @@
+{
+    "description": "Shijo BeagleBone Black - Yocto 6.0 'wrynose' + meta-shijo (USB gadget kernel)",
+    "expires": "2030-05-31",
+    "sources": {
+        "bitbake": {
+            "git-remote": {
+                "uri": "https://git.openembedded.org/bitbake",
+                "branch": "2.18",
+                "rev": "6e260eb6ab1631607ea414d9ff8ede1155faa5d9"
+            }
+        },
+        "openembedded-core": {
+            "git-remote": {
+                "uri": "https://git.openembedded.org/openembedded-core",
+                "branch": "wrynose",
+                "rev": "636e5d3b12d54951c13d57346648bc29a0e6b24e"
+            }
+        },
+        "meta-yocto": {
+            "git-remote": {
+                "uri": "https://git.yoctoproject.org/meta-yocto",
+                "branch": "wrynose",
+                "rev": "7c25b11156553145fa6b241a2d4f65d94438f804"
+            }
+        },
+        "yocto-docs": {
+            "git-remote": {
+                "uri": "https://git.yoctoproject.org/yocto-docs",
+                "branch": "wrynose",
+                "rev": "197ed05f4f157432e7fcab63ced8df1249217366"
+            }
+        },
+        "yocto_bbb": {
+            "git-remote": {
+                "uri": "git@github.com:shijomts4-dev/yocto_bbb.git",
+                "branch": "main",
+                "rev": "main"
+            }
+        }
+    },
+    "bitbake-setup": {
+        "configurations": [
+        {
+            "bb-layers": ["openembedded-core/meta","meta-yocto/meta-yocto-bsp","meta-yocto/meta-poky","yocto_bbb/meta-shijo"],
+            "setup-dir-name": "shijo-bbb-wrynose",
+            "configurations": [
+            {
+                "name": "shijo-bbb",
+                "description": "BeagleBone Black, Poky distro, meta-shijo layer",
+                "oe-fragments": [
+                    "machine/beaglebone-yocto",
+                    "distro/poky",
+                    "core/yocto/root-login-with-empty-password",
+                    "core/yocto/sstate-mirror-cdn"
+                ]
+            }
+            ]
+        }
+        ]
+    },
+    "version": "1.0"
+}

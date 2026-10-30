@@ -3,3 +3,4 @@
 # ...except this file and my layer
 !/.gitignore
 !/meta-shijo/
+!/shijo-bbb.conf.json
